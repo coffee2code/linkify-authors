@@ -2,24 +2,24 @@
 /**
  * @package Linkify_Authors
  * @author Scott Reilly
- * @version 1.1
+ * @version 1.2
  */
 /*
 Plugin Name: Linkify Authors
-Version: 1.1
+Version: 1.2
 Plugin URI: http://coffee2code.com/wp-plugins/linkify-authors
 Author: Scott Reilly
 Author URI: http://coffee2code.com
 Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
-Compatible with WordPress 2.8+, 2.9+.
+Compatible with WordPress 2.8+, 2.9+, 3.0+.
 
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
 =>> for more information and the latest updates
 
 Installation:
 
-1. Download the file http://coffee2code.com/wp-plugins/linkify-authors.zip and unzip it into your 
+1. Download the file http://coffee2code.com/wp-plugins/linkify-authors.zip and unzip it into your
 /wp-content/plugins/ directory (or install via the built-in WordPress plugin installer).
 2. Activate the plugin through the 'Plugins' admin menu in WordPress
 3. Use the linkify_authors() template tag in one of your templates (be sure to pass it at least the first argument
@@ -49,7 +49,7 @@ These are all valid calls:
 
 <?php linkify_authors("3 9"); ?>
 Displays something like:
-	<a href="http://yourblog.com/archives/author/admin">Scott</a>, 
+	<a href="http://yourblog.com/archives/author/admin">Scott</a>,
 	<a href="http://yourblog.com/archives/author/billm">Bill</a>
 
 <ul><?php linkify_authors("3, 9", "<li>", "</li>", "</li><li>"); ?></ul>
@@ -69,9 +69,9 @@ Displays:
 /*
 Copyright (c) 2009-2010 by Scott Reilly (aka coffee2code)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
-files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 
-modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
 Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -107,7 +107,7 @@ function linkify_authors( $authors, $before = '', $after = '', $between = ', ', 
 				$author = get_userdatabylogin($id);
 				$id = $author->ID;
 			}
-			$title = get_author_name($id);
+			$title = get_the_author_meta('display_name', $id);
 			if ( $title )
 				$links[] = sprintf(
 					'<a href="%1$s" title="%2$s">%3$s</a>',

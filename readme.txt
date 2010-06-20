@@ -2,10 +2,10 @@
 Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: authors, link, linkify, archives, list, template tag, coffee2code
-Requires at least: 2.5
-Tested up to: 2.9.1
-Stable tag: 1.1
-Version: 1.1
+Requires at least: 2.8
+Tested up to: 3.0
+Stable tag: 1.2
+Version: 1.2
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
@@ -57,6 +57,11 @@ No related authors.
 
 
 == Changelog ==
+
+= 1.2 =
+* Use get_the_author_meta('display_name') instead of deprecated get_author_name()
+* Note compatibility with WP 3.0
+* Removed trailing whitespace
 
 = 1.1 =
 * Add PHPDoc documentation
