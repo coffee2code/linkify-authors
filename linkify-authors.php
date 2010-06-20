@@ -94,31 +94,31 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * @return none (Text is echoed; nothing is returned)
  */
 function linkify_authors( $authors, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
-	if ( empty($authors) )
+	if ( empty( $authors ) )
 		$authors = array();
-	elseif ( !is_array($authors) )
-		$authors = explode(',', str_replace(array(', ', ' ', ','), ',', $authors));
+	elseif ( !is_array( $authors ) )
+		$authors = explode( ',', str_replace( array( ', ', ' ', ',' ), ',', $authors ) );
 
-	if ( empty($authors) ) $response = '';
+	if ( empty( $authors ) ) $response = '';
 	else {
 		$links = array();
 		foreach ( $authors as $id ) {
 			if ( 0 == (int)$id ) {
-				$author = get_userdatabylogin($id);
+				$author = get_userdatabylogin( $id );
 				$id = $author->ID;
 			}
-			$title = get_the_author_meta('display_name', $id);
+			$title = get_the_author_meta( 'display_name', $id );
 			if ( $title )
 				$links[] = sprintf(
 					'<a href="%1$s" title="%2$s">%3$s</a>',
-					get_author_posts_url($id),
-					sprintf(__('Posts by %s'), esc_attr($title)),
+					get_author_posts_url( $id ),
+					sprintf( __( 'Posts by %s' ), esc_attr( $title ) ),
 					$title
 				);
 		}
-		if ( empty($before_last) ) $response = implode($links, $between);
+		if ( empty( $before_last ) ) $response = implode( $links, $between );
 		else {
-			switch ( $size = sizeof($links) ) {
+			switch ( $size = sizeof( $links ) ) {
 				case 1:
 					$response = $links[0];
 					break;
@@ -126,12 +126,12 @@ function linkify_authors( $authors, $before = '', $after = '', $between = ', ', 
 					$response = $links[0] . $before_last . $links[1];
 					break;
 				default:
-					$response = implode(array_slice($links,0,$size-1), $between) . $before_last . $links[$size-1];
+					$response = implode( array_slice( $links, 0, $size-1 ), $between) . $before_last . $links[$size-1];
 			}
 		}
 	}
-	if ( empty($response) ) {
-		if ( empty($none) ) return;
+	if ( empty( $response ) ) {
+		if ( empty( $none ) ) return;
 		$response = $none;
 	}
 	echo $before . $response . $after;

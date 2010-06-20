@@ -61,7 +61,8 @@ No related authors.
 = 1.2 =
 * Use get_the_author_meta('display_name') instead of deprecated get_author_name()
 * Note compatibility with WP 3.0
-* Removed trailing whitespace
+* Minor tweaks to code formatting (function spacing)
+* Remove trailing whitespace
 
 = 1.1 =
 * Add PHPDoc documentation
