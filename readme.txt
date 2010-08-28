@@ -9,6 +9,7 @@ Version: 1.2
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
+
 == Description ==
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
@@ -56,12 +57,41 @@ No related authors.
 1. Use the `linkify_authors()` template author in one of your templates (be sure to pass it at least the first argument indicating what author IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list).  Other optional arguments are available to customize the output.
 
 
+== Filters ==
+
+The plugin exposes one action for hooking.
+
+= linkify_authors (action) =
+
+The 'linkify_authors' hook allows you to use an alternative approach to safely invoke `linkify_authors()` in such a way that if the plugin were to be deactivated or deleted, then your calls to the function won't cause errors in your site.
+
+Arguments:
+
+* same as for `linkify_authors()`
+
+Example:
+
+Instead of:
+
+`<?php linkify_authors( '19, 28', 'Authors: ' ); ?>`
+
+Do:
+
+`<?php do_action( 'linkify_authors', '19, 28', 'Authors: ' ); ?>`
+
+
 == Changelog ==
 
 = 1.2 =
 * Use get_the_author_meta('display_name') instead of deprecated get_author_name()
-* Note compatibility with WP 3.0
-* Minor tweaks to code formatting (function spacing)
+* Add filter 'linkify_authors' to respond to the function of the same name so that users can use the do_action() notation for invoking template tags
+* Wrap function in if(!function_exists()) check
+* Reverse order of implode() arguments
+* Fix to prevent PHP notice
+* Remove docs from top of plugin file (all that and more are in readme.txt)
+* Note compatibility with WP 3.0+
+* Minor tweaks to code formatting (spacing)
+* Add Filters and Upgrade Notice sections to readme.txt
 * Remove trailing whitespace
 
 = 1.1 =
@@ -75,3 +105,9 @@ No related authors.
 
 = 1.0 =
 * Initial release
+
+
+== Upgrade Notice ==
+
+= 1.2 =
+Minor update. Highlights: switched away from use of deprecated function; added filter to allow alternative safe invocation of function; verified WP 3.0 compatibility.

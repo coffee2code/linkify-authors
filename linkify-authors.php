@@ -7,62 +7,16 @@
 /*
 Plugin Name: Linkify Authors
 Version: 1.2
-Plugin URI: http://coffee2code.com/wp-plugins/linkify-authors
+Plugin URI: http://coffee2code.com/wp-plugins/linkify-authors/
 Author: Scott Reilly
 Author URI: http://coffee2code.com
 Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
 Compatible with WordPress 2.8+, 2.9+, 3.0+.
 
-=>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
-=>> for more information and the latest updates
-
-Installation:
-
-1. Download the file http://coffee2code.com/wp-plugins/linkify-authors.zip and unzip it into your
-/wp-content/plugins/ directory (or install via the built-in WordPress plugin installer).
-2. Activate the plugin through the 'Plugins' admin menu in WordPress
-3. Use the linkify_authors() template tag in one of your templates (be sure to pass it at least the first argument
-	indicating what author IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a
-	comma-separated list).  Other optional arguments are available to customize the output.
-
-
-Examples:
-
-These are all valid calls:
-	<?php linkify_authors(3); ?>
-	<?php linkify_authors("3"); ?>
-	<?php linkify_authors("scott"); ?>
-	<?php linkify_authors("3 9 10"); ?>
-	<?php linkify_authors("scott bill alice"); ?>
-	<?php linkify_authors("scott 9 alice"); ?>
-	<?php linkify_authors("3,9,10"); ?>
-	<?php linkify_authors("scott,bill,alice"); ?>
-	<?php linkify_authors("scott,92,alice"); ?>
-	<?php linkify_authors("3, 9, 10"); ?>
-	<?php linkify_authors("scott, bill, alice"); ?>
-	<?php linkify_authors("scott, 92, alice"); ?>
-	<?php linkify_authors(array(43,92,102)); ?>
-	<?php linkify_authors(array("43","92","102")); ?>
-	<?php linkify_authors(array("scott","bill","alice")); ?>
-	<?php linkify_authors(array("scott",92,"alice")); ?>
-
-<?php linkify_authors("3 9"); ?>
-Displays something like:
-	<a href="http://yourblog.com/archives/author/admin">Scott</a>,
-	<a href="http://yourblog.com/archives/author/billm">Bill</a>
-
-<ul><?php linkify_authors("3, 9", "<li>", "</li>", "</li><li>"); ?></ul>
-Displays something like:
-	<ul><li><a href="http://yourblog.com/archives/author/admin">Scott</a></li>
-	<li><a href="http://yourblog.com/archives/author/billm">Bill</a></li></ul>
-
-<?php linkify_authors(""); // Assume you passed an empty string as the first value ?>
-Displays nothing.
-
-<?php linkify_authors("", "", "", "", "", "No related authors."); // Assume you passed an empty string as the first value ?>
-Displays:
-	No related authors.
+=>> Read the accompanying readme.txt file for instructions and documentation.
+=>> Also, visit the plugin's homepage for additional information and updates.
+=>> Or visit: http://wordpress.org/extend/plugins/linkify-authors/
 
 */
 
@@ -82,6 +36,7 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRA
 IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+if ( !function_exists( 'linkify_authors' ) ) :
 /**
  * Displays links to each of any number of authors specified via author IDs/slugs
  *
@@ -99,24 +54,29 @@ function linkify_authors( $authors, $before = '', $after = '', $between = ', ', 
 	elseif ( !is_array( $authors ) )
 		$authors = explode( ',', str_replace( array( ', ', ' ', ',' ), ',', $authors ) );
 
-	if ( empty( $authors ) ) $response = '';
+	if ( empty( $authors ) )
+		$response = '';
 	else {
 		$links = array();
 		foreach ( $authors as $id ) {
-			if ( 0 == (int)$id ) {
+			if ( 0 == (int) $id ) {
 				$author = get_userdatabylogin( $id );
-				$id = $author->ID;
+				if ( $author )
+					$id = $author->ID;
 			}
+			if ( !$id )
+				continue;
 			$title = get_the_author_meta( 'display_name', $id );
 			if ( $title )
 				$links[] = sprintf(
 					'<a href="%1$s" title="%2$s">%3$s</a>',
 					get_author_posts_url( $id ),
-					sprintf( __( 'Posts by %s' ), esc_attr( $title ) ),
+					esc_attr( sprintf( __( 'Posts by %s' ), $title ) ),
 					$title
 				);
 		}
-		if ( empty( $before_last ) ) $response = implode( $links, $between );
+		if ( empty( $before_last ) )
+			$response = implode( $between, $links );
 		else {
 			switch ( $size = sizeof( $links ) ) {
 				case 1:
@@ -126,14 +86,17 @@ function linkify_authors( $authors, $before = '', $after = '', $between = ', ', 
 					$response = $links[0] . $before_last . $links[1];
 					break;
 				default:
-					$response = implode( array_slice( $links, 0, $size-1 ), $between) . $before_last . $links[$size-1];
+					$response = implode( $between, array_slice( $links, 0, $size-1 ) ) . $before_last . $links[$size-1];
 			}
 		}
 	}
 	if ( empty( $response ) ) {
-		if ( empty( $none ) ) return;
+		if ( empty( $none ) )
+			return;
 		$response = $none;
 	}
 	echo $before . $response . $after;
 }
+add_action( 'linkify_authors', 'linkify_authors', 10, 6 );
+endif;
 ?>
