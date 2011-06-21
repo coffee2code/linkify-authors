@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: authors, link, linkify, archives, list, widget, template tag, coffee2code
 Requires at least: 2.8
-Tested up to: 3.1
-Stable tag: 2.0
-Version: 2.0
+Tested up to: 3.2
+Stable tag: 2.0.1
+Version: 2.0.1
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
@@ -16,7 +16,7 @@ Turn a string, list, or array of author IDs and/or slugs into a list of links to
 
 The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, to easily indicate authors to list and how to list them.  Authors are specified by either ID or slug.  See other parts of the documentation for example usage and capabilities.
 
-Links: [Plugin Homepage]:(http://coffee2code.com/wp-plugins/linkify-authors/) | [Author Homepage]:(http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-authors/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -151,6 +151,11 @@ Do:
 
 == Changelog ==
 
+= 2.0.1 =
+* Note compatibility through WP 3.2+
+* Minor code formatting changes (spacing)
+* Fix plugin homepage and author links in description in readme.txt
+
 = 2.0 =
 * Add Linkify Authors widget
 * Rename `linkify_authors()` to `c2c_linkify_authors()` (but maintain a deprecated version for backwards compatibility)
@@ -187,6 +192,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+Trivial update: noted compatibility through WP 3.2+ and minor code formatting changes (spacing)
 
 = 2.0 =
 Feature update: added widget, deprecated `linkify_authors()` in favor of `c2c_linkify_authors()`, renamed action from 'linkify_authors' to 'c2c_linkify_authors', noted compatibility with WP 3.1+, added Template Tags and FAQ sections to readme, and updated copyright date (2011).

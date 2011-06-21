@@ -2,17 +2,17 @@
 /**
  * @package Linkify_Authors
  * @author Scott Reilly
- * @version 2.0
+ * @version 2.0.1
  */
 /*
 Plugin Name: Linkify Authors
-Version: 2.0
+Version: 2.0.1
 Plugin URI: http://coffee2code.com/wp-plugins/linkify-authors/
 Author: Scott Reilly
 Author URI: http://coffee2code.com
 Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
-Compatible with WordPress 2.8+, 2.9+, 3.0+, 3.1+.
+Compatible with WordPress 2.8+, 2.9+, 3.0+, 3.1+, 3.2+.
 
 =>> Read the accompanying readme.txt file for instructions and documentation.
 =>> Also, visit the plugin's homepage for additional information and updates.
@@ -38,7 +38,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 require_once( dirname( __FILE__ ) . '/linkify-authors.widget.php' );
 
-if ( !function_exists( 'c2c_linkify_authors' ) ) :
+if ( ! function_exists( 'c2c_linkify_authors' ) ) :
 /**
  * Displays links to each of any number of authors specified via author IDs/slugs
  *
@@ -55,7 +55,7 @@ if ( !function_exists( 'c2c_linkify_authors' ) ) :
 function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
 	if ( empty( $authors ) )
 		$authors = array();
-	elseif ( !is_array( $authors ) )
+	elseif ( ! is_array( $authors ) )
 		$authors = explode( ',', str_replace( array( ', ', ' ', ',' ), ',', $authors ) );
 
 	if ( empty( $authors ) ) {
@@ -68,7 +68,7 @@ function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ',
 				if ( $author )
 					$id = $author->ID;
 			}
-			if ( !$id )
+			if ( ! $id )
 				continue;
 			$title = get_the_author_meta( 'display_name', $id );
 			if ( $title )
@@ -104,7 +104,7 @@ function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ',
 add_action( 'c2c_linkify_authors', 'c2c_linkify_authors', 10, 6 );
 endif;
 
-if ( !function_exists( 'linkify_authors' ) ) :
+if ( ! function_exists( 'linkify_authors' ) ) :
 /**
  * Displays links to each of any number of authors specified via author IDs/slugs
  *
