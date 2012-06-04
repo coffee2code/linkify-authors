@@ -2,10 +2,12 @@
 Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: authors, link, linkify, archives, list, widget, template tag, coffee2code
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
-Tested up to: 3.3
-Stable tag: 2.0.2
-Version: 2.0.2
+Tested up to: 3.4
+Stable tag: 2.0.3
+Version: 2.0.3
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
@@ -151,6 +153,12 @@ Do:
 
 == Changelog ==
 
+= 2.0.3 =
+* Re-license as GPLv2 or later (from X11)
+* Add 'License' and 'License URI' header tags to readme.txt and plugin file
+* Remove ending PHP close tag
+* Note compatibility through WP 3.4+
+
 = 2.0.2 =
 * Note compatibility through WP 3.3+
 * Add link to plugin directory page to readme.txt
@@ -197,6 +205,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.0.3 =
+Trivial update: noted compatibility through WP 3.4+; explicitly stated license
 
 = 2.0.2 =
 Trivial update: noted compatibility through WP 3.3+ and minor readme.txt tweaks
