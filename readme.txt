@@ -1,24 +1,21 @@
 === Linkify Authors ===
 Contributors: coffee2code
-Donate link: http://coffee2code.com/donate
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
 Tags: authors, link, linkify, archives, list, widget, template tag, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires at least: 2.8
-Tested up to: 3.5
-Stable tag: 2.0.4
-Version: 2.0.4
+Requires at least: 3.3
+Tested up to: 3.8
+Stable tag: 2.1
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
 
 == Description ==
 
-Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
+The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, which allow you to easily specify authors to list and how to list them.  Authors are specified by either ID or slug.  See other parts of the documentation for example usage and capabilities.
 
-The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, to easily indicate authors to list and how to list them.  Authors are specified by either ID or slug.  See other parts of the documentation for example usage and capabilities.
-
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-authors/) | [Plugin Directory Page](http://wordpress.org/extend/plugins/linkify-authors/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-authors/) | [Plugin Directory Page](http://wordpress.org/plugins/linkify-authors/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -46,6 +43,10 @@ Whether you use the template tag or the widget, specify the following informatio
 Before text: `<ul><li>` (or `<ol><li>`)
 After text: `</li></ul>` (or `</li></ol>`)
 Between authors: `</li><li>`
+
+= Does this plugin include unit tests? =
+
+Yes.
 
 
 == Template Tags ==
@@ -75,7 +76,7 @@ A single author ID/slug, or multiple author IDs/slugs defined via an array, or m
 (optional) To appear between the second-to-last and last element, if not specified, 'between' value is used
 
 * `$none`
-(optional) To appear when no posts have been found.  If blank, then the entire function doesn't display anything
+(optional) To appear when no posts have been found. If blank, then the entire function doesn't display anything
 
 = Examples =
 
@@ -153,6 +154,19 @@ Do:
 
 == Changelog ==
 
+= 2.1 (2013-12-20) =
+* If a slug search for a user by login fails, try by nicename
+* Discontinue use of deprecated `get_userdatabylogin()` and use `get_user_by()` instead
+* Validate author is either int or string before handling
+* Add unit tests
+* Minor code tweaks (spacing, bracing)
+* Minor documentation tweaks
+* Note compatibility through WP 3.8+
+* Discontinue compatibility with WP older than 3.3
+* Update copyright date (2014)
+* Change donate link
+* Add banner
+
 = 2.0.4 =
 * Add check to prevent execution of code if file is directly accessed
 * Note compatibility through WP 3.5+
@@ -212,6 +226,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.1 =
+Moderate update: fallback failed user_login check to user_nicename; better validate data received; added unit tests; noted compatibility through WP 3.8+
 
 = 2.0.4 =
 Trivial update: noted compatibility through WP 3.5+
