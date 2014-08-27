@@ -5,8 +5,8 @@ Tags: authors, link, linkify, archives, list, widget, template tag, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
-Tested up to: 3.8
-Stable tag: 2.1
+Tested up to: 4.0
+Stable tag: 2.1.1
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
 
@@ -15,7 +15,7 @@ Turn a string, list, or array of author IDs and/or slugs into a list of links to
 
 The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, which allow you to easily specify authors to list and how to list them.  Authors are specified by either ID or slug.  See other parts of the documentation for example usage and capabilities.
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-authors/) | [Plugin Directory Page](http://wordpress.org/plugins/linkify-authors/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-authors/) | [Plugin Directory Page](https://wordpress.org/plugins/linkify-authors/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -154,6 +154,12 @@ Do:
 
 == Changelog ==
 
+= 2.1.1 (2014-08-26) =
+* Minor plugin header reformatting
+* Change documentation links to wp.org to be https
+* Note compatibility through WP 4.0+
+* Add plugin icon
+
 = 2.1 (2013-12-20) =
 * If a slug search for a user by login fails, try by nicename
 * Discontinue use of deprecated `get_userdatabylogin()` and use `get_user_by()` instead
@@ -226,6 +232,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.1.1 =
+Trivial update: noted compatibility through WP 4.0+; added plugin icon.
 
 = 2.1 =
 Moderate update: fallback failed user_login check to user_nicename; better validate data received; added unit tests; noted compatibility through WP 3.8+

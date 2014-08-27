@@ -1,26 +1,24 @@
 <?php
 /**
+ * Plugin Name: Linkify Authors
+ * Version:     2.1.1
+ * Plugin URI:  http://coffee2code.com/wp-plugins/linkify-authors/
+ * Author:      Scott Reilly
+ * Author URI:  http://coffee2code.com/
+ * License:     GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
+ *
+ * Compatible with WordPress 3.3 through 4.0+.
+ *
+ * =>> Read the accompanying readme.txt file for instructions and documentation.
+ * =>> Also, visit the plugin's homepage for additional information and updates.
+ * =>> Or visit: https://wordpress.org/plugins/linkify-authors/
+ *
  * @package Linkify_Authors
  * @author Scott Reilly
- * @version 2.1
+ * @version 2.1.1
  */
-/*
-Plugin Name: Linkify Authors
-Version: 2.1
-Plugin URI: http://coffee2code.com/wp-plugins/linkify-authors/
-Author: Scott Reilly
-Author URI: http://coffee2code.com/
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
-
-Compatible with WordPress 3.3 through 3.8+.
-
-=>> Read the accompanying readme.txt file for instructions and documentation.
-=>> Also, visit the plugin's homepage for additional information and updates.
-=>> Or visit: http://wordpress.org/plugins/linkify-authors/
-
-*/
 
 /*
 	Copyright (c) 2009-2014 by Scott Reilly (aka coffee2code)
