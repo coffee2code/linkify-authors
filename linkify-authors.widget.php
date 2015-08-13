@@ -1,14 +1,12 @@
 <?php
 /**
- * @package Linkify_Authors_Widget
- * @author Scott Reilly
- * @version 002
- */
-/*
  * Linkify Authors plugin widget code
  *
- * Copyright (c) 2011-2014 by Scott Reilly (aka coffee2code)
+ * Copyright (c) 2011-2015 by Scott Reilly (aka coffee2code)
  *
+ * @package Linkify_Authors_Widget
+ * @author  Scott Reilly
+ * @version 003
  */
 
 defined( 'ABSPATH' ) or die();
@@ -52,24 +50,27 @@ class c2c_LinkifyAuthorsWidget extends WP_Widget {
 					'help' => __( 'Text to appear when no authors have been found.  If blank, then the entire function doesn\'t display anything.', $this->textdomain ) )
 		);
 
-		foreach ( $this->config as $key => $value )
-			$this->defaults[$key] = $value['default'];
+		foreach ( $this->config as $key => $value ) {
+			$this->defaults[ $key ] = $value['default'];
+		}
 		$widget_ops = array( 'classname' => 'widget_' . $this->widget_id, 'description' => __( 'Converts a list of authors (by slug or ID) into links to those authors.', $this->textdomain ) );
 		$control_ops = array(); //array( 'width' => 400, 'height' => 350, 'id_base' => $this->widget_id );
-		$this->WP_Widget( $this->widget_id, $this->title, $widget_ops, $control_ops );
+		parent::__construct( $this->widget_id, $this->title, $widget_ops, $control_ops );
 	}
 
 	public function widget( $args, $instance ) {
 		extract( $args );
 
 		/* Settings */
-		foreach ( array_keys( $this->config ) as $key )
-			$$key = apply_filters( 'linkify_authors_widget_'.$key, $instance[$key] );
+		foreach ( array_keys( $this->config ) as $key ) {
+			$$key = apply_filters( 'linkify_authors_widget_'.$key, $instance[ $key ] );
+		}
 
 		echo $before_widget;
 
-		if ( $title )
+		if ( $title ) {
 			echo $before_title . $title . $after_title;
+		}
 
 		// Widget content
 		c2c_linkify_authors( $authors, $before, $after, $between, $before_last, $none );
@@ -79,8 +80,10 @@ class c2c_LinkifyAuthorsWidget extends WP_Widget {
 
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		foreach ( $new_instance as $key => $value )
-			$instance[$key] = $value;
+		foreach ( $new_instance as $key => $value ) {
+			$instance[ $key ] = $value;
+		}
+
 		return $instance;
 	}
 
@@ -88,15 +91,18 @@ class c2c_LinkifyAuthorsWidget extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 		$i = $j = 0;
 		foreach ( $instance as $opt => $value ) {
-			if ( $opt == 'submit' ) continue;
-
-			foreach ( array( 'datatype', 'default', 'help', 'input', 'input_attributes', 'label', 'no_wrap', 'options' ) as $attrib ) {
-				if ( !isset( $this->config[$opt][$attrib] ) )
-					$this->config[$opt][$attrib] = '';
+			if ( $opt == 'submit' ) {
+				continue;
 			}
 
-			$input = $this->config[$opt]['input'];
-			$label = $this->config[$opt]['label'];
+			foreach ( array( 'datatype', 'default', 'help', 'input', 'input_attributes', 'label', 'no_wrap', 'options' ) as $attrib ) {
+				if ( ! isset( $this->config[ $opt ][ $attrib ] ) ) {
+					$this->config[ $opt ][ $attrib ] = '';
+				}
+			}
+
+			$input = $this->config[ $opt ]['input'];
+			$label = $this->config[ $opt ]['label'];
 			if ( $input == 'none' ) {
 				if ( $opt == 'more' ) {
 					$i++; $j++;
@@ -116,18 +122,20 @@ class c2c_LinkifyAuthorsWidget extends WP_Widget {
 			};
 			if ( $input == 'multiselect' ) {
 				// Do nothing since it needs the values as an array
-			} elseif ( $this->config[$opt]['datatype'] == 'array' ) {
-				if ( !is_array( $value ) )
+			} elseif ( $this->config[ $opt ]['datatype'] == 'array' ) {
+				if ( ! is_array( $value ) ) {
 					$value = '';
-				else
+				} else {
 					$value = implode( ('textarea' == $input ? "\n" : ', '), $value );
-			} elseif ( $this->config[$opt]['datatype'] == 'hash' ) {
-				if ( !is_array( $value ) )
+				}
+			} elseif ( $this->config[ $opt ]['datatype'] == 'hash' ) {
+				if ( ! is_array( $value ) ) {
 					$value = '';
-				else {
+				} else {
 					$new_value = '';
-					foreach ( $value AS $shortcut => $replacement )
+					foreach ( $value AS $shortcut => $replacement ) {
 						$new_value .= "$shortcut => $replacement\n";
+					}
 					$value = $new_value;
 				}
 			}
@@ -135,25 +143,29 @@ class c2c_LinkifyAuthorsWidget extends WP_Widget {
 			$input_id = $this->get_field_id( $opt );
 			$input_name = $this->get_field_name( $opt );
 			$value = esc_attr( $value );
-			if ( $label && ( $input != 'multiselect' ) ) echo "<label for='$input_id'>$label:</label> ";
+			if ( $label && ( $input != 'multiselect' ) ) {
+				echo "<label for='$input_id'>$label:</label> ";
+			}
 			if ( $input == 'textarea' ) {
-				echo "<textarea name='$input_name' id='$input_id' class='widefat' {$this->config[$opt]['input_attributes']}>" . $value . '</textarea>';
+				echo "<textarea name='$input_name' id='$input_id' class='widefat' {$this->config[ $opt ]['input_attributes']}>" . $value . '</textarea>';
 			} elseif ( $input == 'select' ) {
 				echo "<select name='$input_name' id='$input_id'>";
-				foreach ( (array) $this->config[$opt]['options'] as $sopt ) {
+				foreach ( (array) $this->config[ $opt ]['options'] as $sopt ) {
 					$selected = $value == $sopt ? " selected='selected'" : '';
 					echo "<option value='$sopt'$selected>$sopt</option>";
 				}
 				echo "</select>";
 			} elseif ( $input == 'multiselect' ) {
 				echo '<fieldset style="border:1px solid #ccc; padding:2px 8px;">';
-				if ( $label ) echo "<legend>$label: </legend>";
-				foreach ( (array) $this->config[$opt]['options'] as $sopt ) {
+				if ( $label ) {
+					echo "<legend>$label: </legend>";
+				}
+				foreach ( (array) $this->config[ $opt ]['options'] as $sopt ) {
 					$selected = in_array( $sopt, $value ) ? " checked='checked'" : '';
 					echo "<input type='checkbox' name='$input_name' id='$input_id' value='$sopt'$selected>$sopt</input><br />";
 				}
 				echo '</fieldset>';
-			} elseif ( !empty( $input ) ) { // If no input defined, then not valid input
+			} elseif ( ! empty( $input ) ) { // If no input defined, then not valid input
 				if ( $input == 'short_text' ) {
 					$tclass = '';
 					$tstyle = 'width:25px;';
@@ -162,10 +174,11 @@ class c2c_LinkifyAuthorsWidget extends WP_Widget {
 					$tclass = 'widefat';
 					$tstyle = '';
 				}
-				echo "<input name='$input_name' type='$input' id='$input_id' value='$value' class='$tclass' style='$tstyle' $checked {$this->config[$opt]['input_attributes']} />";
+				echo "<input name='$input_name' type='$input' id='$input_id' value='$value' class='$tclass' style='$tstyle' $checked {$this->config[ $opt ]['input_attributes']} />";
 			}
-			if ( $this->config[$opt]['help'] )
-				echo "<br /><span style='color:#888; font-size:x-small;'>({$this->config[$opt]['help']})</span>";
+			if ( $this->config[ $opt ]['help'] ) {
+				echo "<br /><span style='color:#888; font-size:x-small;'>({$this->config[ $opt ]['help']})</span>";
+			}
 			echo "</p>\n";
 		}
 		// Close any open divs

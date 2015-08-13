@@ -10,7 +10,7 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 	}
 
 
-	/**
+	/*
 	 *
 	 * HELPER FUNCTIONS
 	 *
@@ -51,7 +51,7 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 	}
 
 
-	/**
+	/*
 	 *
 	 * TESTS
 	 *
