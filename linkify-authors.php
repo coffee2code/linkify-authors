@@ -1,15 +1,16 @@
 <?php
 /**
  * Plugin Name: Linkify Authors
- * Version:     2.1.3
+ * Version:     2.2
  * Plugin URI:  http://coffee2code.com/wp-plugins/linkify-authors/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
+ * Text Domain: linkify-authors
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
+ * Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Includes widget and template tag.
  *
- * Compatible with WordPress 3.3 through 4.3+.
+ * Compatible with WordPress 3.3 through 4.4+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
@@ -17,11 +18,11 @@
  *
  * @package Linkify_Authors
  * @author  Scott Reilly
- * @version 2.1.3
+ * @version 2.2
  */
 
 /*
-	Copyright (c) 2009-2015 by Scott Reilly (aka coffee2code)
+	Copyright (c) 2009-2016 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -40,7 +41,7 @@
 
 defined( 'ABSPATH' ) or die();
 
-require_once( dirname( __FILE__ ) . '/linkify-authors.widget.php' );
+require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'linkify-authors.widget.php' );
 
 if ( ! function_exists( 'c2c_linkify_authors' ) ) :
 /**

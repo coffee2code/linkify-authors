@@ -5,10 +5,10 @@ Tags: authors, link, linkify, archives, list, widget, template tag, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
-Tested up to: 4.3
-Stable tag: 2.1.3
+Tested up to: 4.4
+Stable tag: 2.2
 
-Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors.
+Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Includes widget and template tag.
 
 
 == Description ==
@@ -154,6 +154,24 @@ Do:
 
 == Changelog ==
 
+= 2.2 (2016-03-11) =
+* Change: Update widget to 004:
+    * Add `register_widget()` and change to calling it when hooking 'admin_init'.
+    * Add `version()` to return the widget's version.
+    * Reformat config array.
+    * Discontinue use of old-style constructor.
+    * Add inline docs for class variables.
+    * Late-escape attribute values.
+    * Reorder some conditional expressions.
+* Change: Explicitly declare methods in unit tests as public or protected.
+* Change: Fix and simplify unit tests. Add tests for widget.
+* New: Add 'Text Domain' to plugin header.
+* New: Add LICENSE file.
+* New: Add empty index.php to prevent files from being listed if web server has enabled directory listings.
+* Change: Use DIRECTORY_SEPARATOR in place of '/' when requiring widget file.
+* Change: Note compatibility through WP 4.4+.
+* Change: Update copyright date (2016).
+
 = 2.1.3 (2015-08-12) =
 * Update: Discontinue use of PHP4-style constructor invocation of WP_Widget to prevent PHP notices in PHP7
 * Update: Minor widget header reformatting
@@ -243,6 +261,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.2 =
+Minor update: minor updates to widget code and unit tests; verified compatibility through WP 4.4; updated copyright date (2016).
 
 = 2.1.3 =
 Bugfix update: Prevented PHP notice under PHP7+ for widget; noted compatibility through WP 4.3+
