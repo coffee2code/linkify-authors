@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die();
 
 class Linkify_Authors_Test extends WP_UnitTestCase {
 
-	private static $user_ids = array();
+	private $user_ids = array();
 
 	public function setUp() {
 		parent::setUp();
