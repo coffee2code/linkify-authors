@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 4.7
-Stable tag: 2.2
+Stable tag: 2.2.1
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
 
@@ -154,7 +154,7 @@ Do:
 
 == Changelog ==
 
-= () =
+= 2.2.1 (2017-02-24) =
 * Fix: Fix unit tests by not declaring test class variable as static
 * Change: Update unit test bootstrap
     * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
@@ -270,6 +270,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.2.1 =
+Trivial update: fixed some unit tests, noted compatibility through WP 4.7+, updated copyright date
 
 = 2.2 =
 Minor update: minor updates to widget code and unit tests; verified compatibility through WP 4.4; updated copyright date (2016).
