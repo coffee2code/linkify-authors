@@ -2,7 +2,7 @@
 /**
  * Linkify Authors plugin widget code
  *
- * Copyright (c) 2011-2016 by Scott Reilly (aka coffee2code)
+ * Copyright (c) 2011-2017 by Scott Reilly (aka coffee2code)
  *
  * @package Linkify_Authors_Widget
  * @author  Scott Reilly
