@@ -8,21 +8,21 @@ Requires at least: 3.3
 Tested up to: 4.7
 Stable tag: 2.2
 
-Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Includes widget and template tag.
+Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
 
 
 == Description ==
 
-The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, which allow you to easily specify authors to list and how to list them.  Authors are specified by either ID or slug.  See other parts of the documentation for example usage and capabilities.
+The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, which allow you to easily specify authors to list and how to list them. Authors are specified by either ID or slug. See other parts of the documentation for example usage and capabilities.
 
 Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-authors/) | [Plugin Directory Page](https://wordpress.org/plugins/linkify-authors/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
 
-1. Unzip `linkify-authors.zip` inside the `/wp-content/plugins/` directory for your site (or install via the built-in WordPress plugin installer)
-1. Activate the plugin through the 'Plugins' admin menu in WordPress
-1. Use the provided widget or the `c2c_linkify_authors()` template tag in one of your templates (be sure to pass it at least the first argument indicating what author IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list).  Other optional arguments are available to customize the output.
+1. Install via the built-in WordPress plugin installer. Or download and unzip `linkify-authors.zip` inside the plugins directory for your site (typically `wp-content/plugins/`)
+2. Activate the plugin through the 'Plugins' admin menu in WordPress
+3. Use the provided widget or the `c2c_linkify_authors()` template tag in one of your templates (be sure to pass it at least the first argument indicating what author IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list). Other optional arguments are available to customize the output.
 
 
 == Screenshots ==
@@ -160,6 +160,7 @@ Do:
     * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
     * Enable more error output for unit tests
 * Change: Note compatibility through WP 4.7+
+* Change: Minor readme.txt content and formatting tweaks
 * Change: Update copyright date (2017)
 
 = 2.2 (2016-03-11) =
