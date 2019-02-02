@@ -15,7 +15,7 @@ Turn a string, list, or array of author IDs and/or slugs into a list of links to
 
 The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, which allow you to easily specify authors to list and how to list them. Authors are specified by either ID or slug. See other parts of the documentation for example usage and capabilities.
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-authors/) | [Plugin Directory Page](https://wordpress.org/plugins/linkify-authors/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-authors/) | [Plugin Directory Page](https://wordpress.org/plugins/linkify-authors/) | [GitHub](https://github.com/coffee2code/linkify-authors/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -155,6 +155,7 @@ Do:
 == Changelog ==
 
 = () =
+* Change: Add GitHub link to readme
 * Change: Unit tests: Minor whitespace tweaks to bootstrap
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'
 * Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
