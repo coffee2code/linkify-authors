@@ -155,6 +155,7 @@ Do:
 == Changelog ==
 
 = () =
+* Change: Unit tests: Minor whitespace tweaks to bootstrap
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'
 * Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
 * Change: Note compatibility through WP 5.1+
