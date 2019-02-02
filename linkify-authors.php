@@ -10,7 +10,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Includes widget and template tag.
  *
- * Compatible with WordPress 3.3 through 4.7+.
+ * Compatible with WordPress 3.3 through 5.1+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
