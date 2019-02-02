@@ -89,9 +89,9 @@ function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ',
 			if ( $title ) {
 				$links[] = sprintf(
 					'<a href="%1$s" title="%2$s">%3$s</a>',
-					get_author_posts_url( $id ),
+					esc_url( get_author_posts_url( $id ) ),
 					esc_attr( sprintf( __( 'Posts by %s' ), $title ) ),
-					$title
+					esc_attr( $title )
 				);
 			}
 		}
