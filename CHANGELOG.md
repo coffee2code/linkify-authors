@@ -4,6 +4,7 @@
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
 * Change: Note compatibility through WP 5.3+
 * Change: Add link to plugin's page in Plugin Directory to README.md
+* Change: Update copyright date (2020)
 * Change: Split paragraph in README.md's "Support" section into two
 
 ## 2.2.2 _(2019-02-01)_
