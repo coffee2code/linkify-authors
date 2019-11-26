@@ -10,6 +10,7 @@ This plugin is available in the WordPress Plugin Directory: https://wordpress.or
 1. Install via the built-in WordPress plugin installer. Or install the plugin code inside the plugins directory for your site (typically `/wp-content/plugins/`).
 2. Activate the plugin through the 'Plugins' admin menu in WordPress
 3. Use the provided widget or the `c2c_linkify_authors()` template tag in one of your templates (be sure to pass it at least the first argument indicating what author IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list). Other optional arguments are available to customize the output.
+4. Optional: Use the "Linkify Authors" widget in one of the sidebars provided by your theme.
 
 
 ## Additional Documentation
