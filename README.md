@@ -12,7 +12,7 @@ A plugin for WordPress that turns a string, list, or array of author IDs and/or 
 
 ## Additional Documentation
 
-See [readme.txt](https://github.com/coffee2code/linkify-authors/blob/master/readme.txt) for additional usage information.
+See [readme.txt](https://github.com/coffee2code/linkify-authors/blob/master/readme.txt) for additional usage information. See [CHANGELOG.md](CHANGELOG.md) for the list of changes for each release.
 
 
 ## Support
