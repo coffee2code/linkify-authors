@@ -23,6 +23,7 @@
 
 /*
  * TODO:
+ * - Add shortcode
  * - Add block
  */
 
