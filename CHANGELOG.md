@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 2.2.3 _(2019-11-25)_
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
 * New: Add optional step to installation instructions to note availability of the widget
 * Change: Update unit test install script and bootstrap to use latest WP unit test repo

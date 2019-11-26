@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 5.3
-Stable tag: 2.2.2
+Stable tag: 2.2.3
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
 
@@ -155,6 +155,15 @@ Do:
 
 == Changelog ==
 
+= 2.2.3 (2019-11-25) =
+* New: Add CHANGELOG.md and move all but most recent changelog entries into it
+* New: Add optional step to installation instructions to note availability of the widget
+* Change: Update unit test install script and bootstrap to use latest WP unit test repo
+* Change: Note compatibility through WP 5.3+
+* Change: Add link to plugin's page in Plugin Directory to README.md
+* Change: Update copyright date (2020)
+* Change: Split paragraph in README.md's "Support" section into two
+
 = 2.2.2 (2019-02-01) =
 * New: Add README.md
 * Change: Escape text used in markup attributes (hardening)
@@ -179,6 +188,9 @@ _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/li
 
 
 == Upgrade Notice ==
+
+= 2.2.3 =
+Trivial update: modernized unit tests, created CHANGELOG.md to store historical changelog outside of readme.txt, noted compatibility through WP 5.3+, and updated copyright date (2020)
 
 = 2.2.2 =
 Trivial update: noted compatibility through WP 5.1+ and updated copyright date (2019)
