@@ -104,20 +104,20 @@ A single author ID/slug, or multiple author IDs/slugs defined via an array, or m
 
 Outputs something like:
 
-`<a href="http://yourblog.com/archives/author/admin">Scott</a>, <a href="http://yourblog.com/archives/author/billm">Bill</a>`
+`<a href="https://example.com/archives/author/admin">Scott</a>, <a href="https://example.com/archives/author/billm">Bill</a>`
 
 * Assume that you have a custom field with a key of "Related Authors" that happens to have a value of "3, 9" defined (and you're in-the-loop).
 
 Outputs something like:
 
-`Related authors: <a href="http://yourblog.com/archives/author/admin">Scott</a>, <a href="http://yourblog.com/archives/author/billm">Bill</a>`
+`Related authors: <a href="https://example.com/archives/author/admin">Scott</a>, <a href="https://example.com/archives/author/billm">Bill</a>`
 
 * `<ul><?php c2c_linkify_authors("3, 9", "<li>", "</li>", "</li><li>"); ?></ul>`
 
 Outputs something like:
 
-`<ul><li><a href="http://yourblog.com/archives/author/admin">Scott</a></li>
-<li><a href="http://yourblog.com/archives/author/billm">Bill</a></li></ul>`
+`<ul><li><a href="https://example.com/archives/author/admin">Scott</a></li>
+<li><a href="https://example.com/archives/author/billm">Bill</a></li></ul>`
 
 * `<?php c2c_linkify_authors(""); // Assume you passed an empty string as the first value ?>`
 

@@ -4,6 +4,7 @@
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
 * Change: Note compatibility through WP 5.4+
 * Change: Update links to coffee2code.com to be HTTPS
+* Change: Update examples in documentation to use a proper example URL
 
 ## 2.2.3 _(2019-11-25)_
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
