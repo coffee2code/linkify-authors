@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 5.4
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
 
@@ -155,6 +155,12 @@ Do:
 
 == Changelog ==
 
+= 2.2.4 (2020-05-05) =
+* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
+* Change: Note compatibility through WP 5.4+
+* Change: Update links to coffee2code.com to be HTTPS
+* Change: Update examples in documentation to use a proper example URL
+
 = 2.2.3 (2019-11-25) =
 * New: Add CHANGELOG.md and move all but most recent changelog entries into it
 * New: Add optional step to installation instructions to note availability of the widget
@@ -175,19 +181,13 @@ Do:
 * Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
 
-= 2.2.1 (2017-02-24) =
-* Fix: Fix unit tests by not declaring test class variable as static
-* Change: Update unit test bootstrap
-    * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
-    * Enable more error output for unit tests
-* Change: Note compatibility through WP 4.7+
-* Change: Minor readme.txt content and formatting tweaks
-* Change: Update copyright date (2017)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/linkify-authors/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.2.4 =
+Trivial update: Updated a few URLs to be HTTPS and noted compatibility through WP 5.4+.
 
 = 2.2.3 =
 Trivial update: modernized unit tests, created CHANGELOG.md to store historical changelog outside of readme.txt, noted compatibility through WP 5.3+, and updated copyright date (2020)
