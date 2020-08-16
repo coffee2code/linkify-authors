@@ -5,7 +5,7 @@ Tags: authors, link, linkify, archives, list, widget, template tag, coffee2code
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 2.2.4
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
