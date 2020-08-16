@@ -6,5 +6,6 @@ The following list comprises ideas, suggestions, and known issues, all of which 
 
 * Add shortcode
 * Add block
+* Remove code for long-deprecated `linkify_authors()`
 
 Feel free to make your own suggestions or champion for something already on the list (via the [plugin's support forum on WordPress.org](https://wordpress.org/support/plugin/linkify-authors/) or on [GitHub](https://github.com/coffee2code/linkify-authors/) as an issue or PR).
