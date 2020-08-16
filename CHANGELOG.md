@@ -2,6 +2,12 @@
 
 ## _(in-progress)_
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it
+* Change: Restructure unit test file structure
+    * New: *Create new subdirectory `phpunit/` to house all files related to unit testing
+    * Change: *Move `bin/` to `phpunit/bin/`
+    * Change: *Move `tests/bootstrap.php` to `phpunit/`
+    * Change: *Move `tests/` to `phpunit/tests/`
+    * Change: *Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
 * Change: Note compatibility through WP 5.5+
 
 ## 2.2.4 _(2020-05-05)_
