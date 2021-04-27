@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Update copyright date (2021)
+
 ## 2.2.5 _(2020-08-15)_
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it
 * Change: Restructure unit test file structure
