@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Change: Add textdomain for lone non-widget string
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
 * Change: Fix formatting for readme.txt changelog entry for v2.2.5

@@ -90,7 +90,7 @@ function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ',
 				$links[] = sprintf(
 					'<a href="%1$s" title="%2$s">%3$s</a>',
 					esc_url( get_author_posts_url( $id ) ),
-					esc_attr( sprintf( __( 'Posts by %s' ), $title ) ),
+					esc_attr( sprintf( __( 'Posts by %s', 'linkify-authors' ), $title ) ),
 					esc_attr( $title )
 				);
 			}
