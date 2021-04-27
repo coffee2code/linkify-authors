@@ -4,6 +4,7 @@
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
 * Change: Fix formatting for readme.txt changelog entry for v2.2.5
+* Change: Unit tests: Move install script into `phpunit/bin/` where it was originally meant to be
 
 ## 2.2.5 _(2020-08-15)_
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it
