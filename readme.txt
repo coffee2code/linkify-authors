@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 5.7
-Stable tag: 2.2.5
+Stable tag: 2.2.6
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
 
@@ -155,6 +155,14 @@ Do:
 
 == Changelog ==
 
+= 2.2.6 (2021-04-26) =
+* Change: Add textdomain for lone non-widget string
+* Change: Note compatibility through WP 5.7+
+* Change: Update copyright date (2021)
+* Change: Fix formatting for readme.txt changelog entry for v2.2.5
+* Change: Unit tests: Move install script into `phpunit/bin/` where it was originally meant to be
+* New: Add a few more possible TODO items
+
 = 2.2.5 (2020-08-15) =
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it
 * Change: Restructure unit test file structure
@@ -171,19 +179,13 @@ Do:
 * Change: Update links to coffee2code.com to be HTTPS
 * Change: Update examples in documentation to use a proper example URL
 
-= 2.2.3 (2019-11-25) =
-* New: Add CHANGELOG.md and move all but most recent changelog entries into it
-* New: Add optional step to installation instructions to note availability of the widget
-* Change: Update unit test install script and bootstrap to use latest WP unit test repo
-* Change: Note compatibility through WP 5.3+
-* Change: Add link to plugin's page in Plugin Directory to README.md
-* Change: Update copyright date (2020)
-* Change: Split paragraph in README.md's "Support" section into two
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/linkify-authors/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.2.6 =
+Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021).
 
 = 2.2.5 =
 Trivial update: Restructured unit test file structure, added a TODO.md file, and noted compatibility through WP 5.5+.
