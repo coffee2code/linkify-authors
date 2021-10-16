@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Change: Remove long-deprecated function `linkify_authors()`
 * Fix: Fix Markdown formatting for code examples in readme.txt
 * Change: Note compatibility through WP 5.8+
 * Unit tests:

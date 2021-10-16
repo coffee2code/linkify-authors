@@ -176,16 +176,4 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 		$this->assertEquals( $expected, $this->get_results( array( array(), '<ul><li>', '</li></ul>', '</li><li>', '', $missing ), false ) );
 	}
 
-	/**
-	 * @expectedDeprecated linkify_authors
-	 */
-	public function test_deprecated_function() {
-		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $this->user_ids[0] ), false, true ) );
-		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $this->user_ids ), false, true ) );
-		$user = get_userdata( $this->user_ids[0] );
-		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $user->data->user_nicename ), false, true ) );
-		$user_slugs = array_map( array( $this, 'get_slug' ), $this->user_ids );
-		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $user_slugs ), false, true ) );
-	}
-
 }

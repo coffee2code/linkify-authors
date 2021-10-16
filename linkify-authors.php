@@ -121,17 +121,3 @@ function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ',
 }
 add_action( 'c2c_linkify_authors', 'c2c_linkify_authors', 10, 6 );
 endif;
-
-if ( ! function_exists( 'linkify_authors' ) ) :
-/**
- * Displays links to each of any number of authors specified via author IDs/slugs
- *
- * @since 1.0
- * @deprecated 2.0 Use c2c_linkify_authors() instead
- */
-function linkify_authors( $authors, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
-	_deprecated_function( 'linkify_authors', '2.0', 'c2c_linkify_authors' );
-	return c2c_linkify_authors( $authors, $before, $after, $between, $before_last, $none );
-}
-add_action( 'linkify_authors', 'linkify_authors', 10, 6 ); // Deprecated
-endif;
