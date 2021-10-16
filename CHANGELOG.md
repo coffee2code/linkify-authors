@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Note compatibility through WP 5.8+
+
 ## 2.2.6 _(2021-04-26)_
 * Change: Add textdomain for lone non-widget string
 * Change: Note compatibility through WP 5.7+
