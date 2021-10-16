@@ -8,6 +8,7 @@
         * Change: Move `phpunit/bin/` into `tests/`
     * Change: Remove 'test-' prefix from unit test file
     * Change: In bootstrap, store path to plugin file constant
+    * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
 
 ## 2.2.6 _(2021-04-26)_
 * Change: Add textdomain for lone non-widget string
