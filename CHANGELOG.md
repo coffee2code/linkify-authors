@@ -6,6 +6,7 @@
     * Change: Restructure unit test directories
         * Change: Move `phpunit/` into `tests/phpunit/`
         * Change: Move `phpunit/bin/` into `tests/`
+    * Change: Remove 'test-' prefix from unit test file
 
 ## 2.2.6 _(2021-04-26)_
 * Change: Add textdomain for lone non-widget string
