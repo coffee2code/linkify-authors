@@ -7,6 +7,7 @@
         * Change: Move `phpunit/` into `tests/phpunit/`
         * Change: Move `phpunit/bin/` into `tests/`
     * Change: Remove 'test-' prefix from unit test file
+    * Change: In bootstrap, store path to plugin file constant
 
 ## 2.2.6 _(2021-04-26)_
 * Change: Add textdomain for lone non-widget string
