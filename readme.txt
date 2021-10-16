@@ -83,22 +83,24 @@ A single author ID/slug, or multiple author IDs/slugs defined via an array, or m
 
 * These are all valid calls:
 
-`<?php c2c_linkify_authors(3); ?>`
-`<?php c2c_linkify_authors("3"); ?>`
-`<?php c2c_linkify_authors("scott"); ?>`
-`<?php c2c_linkify_authors("3 9 10"); ?>`
-`<?php c2c_linkify_authors("scott bill alice"); ?>`
-`<?php c2c_linkify_authors("scott 9 alice"); ?>`
-`<?php c2c_linkify_authors("3,9,10"); ?>`
-`<?php c2c_linkify_authors("scott,bill,alice"); ?>`
-`<?php c2c_linkify_authors("scott,92,alice"); ?>`
-`<?php c2c_linkify_authors("3, 9, 10"); ?>`
-`<?php c2c_linkify_authors("scott, bill, alice"); ?>`
-`<?php c2c_linkify_authors("scott, 92, alice"); ?>`
-`<?php c2c_linkify_authors(array(43,92,102)); ?>`
-`<?php c2c_linkify_authors(array("43","92","102")); ?>`
-`<?php c2c_linkify_authors(array("scott","bill","alice")); ?>`
-`<?php c2c_linkify_authors(array("scott",92,"alice")); ?>`
+`
+<?php c2c_linkify_authors(3); ?>
+<?php c2c_linkify_authors("3"); ?>
+<?php c2c_linkify_authors("scott"); ?>
+<?php c2c_linkify_authors("3 9 10"); ?>
+<?php c2c_linkify_authors("scott bill alice"); ?>
+<?php c2c_linkify_authors("scott 9 alice"); ?>
+<?php c2c_linkify_authors("3,9,10"); ?>
+<?php c2c_linkify_authors("scott,bill,alice"); ?>
+<?php c2c_linkify_authors("scott,92,alice"); ?>
+<?php c2c_linkify_authors("3, 9, 10"); ?>
+<?php c2c_linkify_authors("scott, bill, alice"); ?>
+<?php c2c_linkify_authors("scott, 92, alice"); ?>
+<?php c2c_linkify_authors(array(43,92,102)); ?>
+<?php c2c_linkify_authors(array("43","92","102")); ?>
+<?php c2c_linkify_authors(array("scott","bill","alice")); ?>
+<?php c2c_linkify_authors(array("scott",92,"alice")); ?>
+`
 
 * `<?php c2c_linkify_authors("3 9"); ?>`
 
