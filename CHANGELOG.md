@@ -1,6 +1,13 @@
 # Changelog
 
-## _(in-progress)_
+## 2.3 _(2021-10-16)_
+
+### Highlights:
+
+This minor release removes support for the long-deprecated `linkify_authors()`, adds DEVELOPER-DOCS.md, notes compatibility through WP 5.8+, and minor reorganization and tweaks to unit tests.
+
+### Details:
+
 * Change: Remove long-deprecated function `linkify_authors()`
 * New: Add DEVELOPER-DOCS.md and move template tag and hooks documentation into it
 * Fix: Fix Markdown formatting for code examples in readme.txt

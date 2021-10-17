@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 5.8
-Stable tag: 2.2.6
+Stable tag: 2.3
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
 
@@ -65,6 +65,26 @@ This is the hook provided by the plugin:
 
 == Changelog ==
 
+= 2.3 (2021-10-16) =
+Highlights:
+
+This minor release removes support for the long-deprecated `linkify_authors()`, adds DEVELOPER-DOCS.md, notes compatibility through WP 5.8+, and minor reorganization and tweaks to unit tests.
+
+Details:
+
+* Change: Remove long-deprecated function `linkify_authors()`
+* New: Add DEVELOPER-DOCS.md and move template tag and hooks documentation into it
+* Fix: Fix Markdown formatting for code examples in readme.txt
+* Change: Tweak installation instruction
+* Change: Note compatibility through WP 5.8+
+* Unit tests:
+    * Change: Restructure unit test directories
+        * Change: Move `phpunit/` into `tests/phpunit/`
+        * Change: Move `phpunit/bin/` into `tests/`
+    * Change: Remove 'test-' prefix from unit test file
+    * Change: In bootstrap, store path to plugin file constant
+    * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
+
 = 2.2.6 (2021-04-26) =
 * Change: Add textdomain for lone non-widget string
 * Change: Note compatibility through WP 5.7+
@@ -83,16 +103,13 @@ This is the hook provided by the plugin:
     * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
 * Change: Note compatibility through WP 5.5+
 
-= 2.2.4 (2020-05-05) =
-* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
-* Change: Note compatibility through WP 5.4+
-* Change: Update links to coffee2code.com to be HTTPS
-* Change: Update examples in documentation to use a proper example URL
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/linkify-authors/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.3 =
+Minor update: removed support for long-deprecated `linkify_authors()`, added DEVELOPER-DOCS.md, noted compatibility through WP 5.8+, and minor reorganization and tweaks to unit tests
 
 = 2.2.6 =
 Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021).
