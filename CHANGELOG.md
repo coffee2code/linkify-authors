@@ -4,6 +4,10 @@
 * Change: Note compatibility through WP 6.3+
 * Change: Update copyright date (2023)
 * New: Add `.gitignore` file
+* Unit tests:
+    * Allow tests to run against current versions of WordPress
+    * New: Add `composer.json` for PHPUnit Polyfill dependency
+    * Change: Prevent PHP warnings due to missing core-related generated files
 
 ## 2.3 _(2021-10-16)_
 

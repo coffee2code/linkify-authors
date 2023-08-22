@@ -5,7 +5,19 @@
  * @package Linkify_Authors
  */
 
-define( 'LINKIFY_AUTHORS_PLUGIN_FILE', dirname( __FILE__, 3 ) . '/linkify-authors.php' );
+define( 'LINKIFY_AUTHORS_PLUGIN_DIR',  dirname( __FILE__, 3 ) );
+define( 'LINKIFY_AUTHORS_PLUGIN_FILE', LINKIFY_AUTHORS_PLUGIN_DIR . '/linkify-authors.php' );
+
+$polyfill_path = LINKIFY_AUTHORS_PLUGIN_DIR . '/vendor/yoast/phpunit-polyfills/phpunitpolyfills-autoload.php';
+if ( file_exists( $polyfill_path ) ) {
+	require $polyfill_path;
+} else {
+	echo "Error: PHPUnit Polyfills dependency not found.\n";
+	echo "Run: composer require --dev yoast/phpunit-polyfills:\"^2.0\"\n";
+	exit;
+}
+
+! defined( 'WP_RUN_CORE_TESTS' ) && define( 'WP_RUN_CORE_TESTS', false );
 
 ini_set( 'display_errors', 'on' );
 error_reporting( E_ALL );
