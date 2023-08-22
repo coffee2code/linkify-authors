@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Fix: Fix some typos in documentation
 * Change: Note compatibility through WP 6.3+
 * Change: Update copyright date (2023)
 * New: Add `.gitignore` file

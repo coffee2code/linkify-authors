@@ -14,7 +14,7 @@ Displays links to each of any number of authors specified via author IDs/slugs
 ### Arguments
 
 * `$authors` _(string|int|array)_
-A single author ID/slug, or multiple author IDs/slugs defined via an array, or multiple authors IDs/slugs defined via a comma-separated and/or space-separated string
+A single author ID/slug, or multiple author IDs/slugs defined via an array, or multiple author IDs/slugs defined via a comma-separated and/or space-separated string
 
 * `$before` _(string)_
 Optional. Text to appear before the entire author listing (if authors exist or if 'none' setting is specified). Default is an empty string.
@@ -29,7 +29,7 @@ Optional. Text to appear between authors. Default is ", ".
 Optional. Text to appear between the second-to-last and last element, if not specified, 'between' value is used. Default is an empty string.
 
 * `$none` _(string)_
-Optional. Text to appear when no posts have been found. If blank, then the entire function doesn't display anything. Default is an empty string.
+Optional. Text to appear when no authors have been found. If blank, then the entire function doesn't display anything. Default is an empty string.
 
 ### Examples
 

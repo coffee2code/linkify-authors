@@ -56,7 +56,7 @@ Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/c
 
 As an overview, this is the template tag provided by the plugin:
 
-* `c2c_linkify_authors()` : Template tag to display links to each of any number of authors specified via author IDs/slugs. You can customize text to show before and/or after the entire listing, between each author, and what to display (if anything) when no authors are listed.
+* `c2c_linkify_authors()` : Display links to each of any number of authors specified via author IDs/slugs. You can customize text to show before and/or after the entire listing, between each author, and what to display (if anything) when no authors are listed.
 
 This is the hook provided by the plugin:
 
