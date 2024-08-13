@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Note compatibility through WP 6.6+
+
 ## 2.3.1 _(2023-08-22)_
 * Fix: Fix some typos in documentation
 * Change: Note compatibility through WP 6.3+
