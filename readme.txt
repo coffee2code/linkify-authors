@@ -8,12 +8,12 @@ Requires at least: 3.3
 Tested up to: 6.6
 Stable tag: 2.3.1
 
-Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
+Turn a string, list, or array of author IDs and/or slugs into a list of links to the post archive for each author. Provides a widget and template tag.
 
 
 == Description ==
 
-The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, which allow you to easily specify authors to list and how to list them. Authors are specified by either ID or slug. See other parts of the documentation for example usage and capabilities.
+The plugin provides a widget called "Linkify Authors" as well as a template tag, `c2c_linkify_authors()`, which allow you to easily specify authors to list and how to list them. Authors are specified by either ID or slug. Each link will point to the post archive for each user. See other parts of the documentation for example usage and capabilities.
 
 Links: [Plugin Homepage](https://coffee2code.com/wp-plugins/linkify-authors/) | [Plugin Directory Page](https://wordpress.org/plugins/linkify-authors/) | [GitHub](https://github.com/coffee2code/linkify-authors/) | [Author Homepage](https://coffee2code.com)
 

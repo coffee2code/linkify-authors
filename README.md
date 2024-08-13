@@ -1,6 +1,6 @@
 # Linkify Authors
 
-A plugin for WordPress that turns a string, list, or array of author IDs and/or slugs into a list of links to those authors. Provides a widget and template tag.
+A plugin for WordPress that turns a string, list, or array of author IDs and/or slugs into a list of links to the post archive for each author. Provides a widget and template tag.
 
 This plugin is available in the WordPress Plugin Directory: https://wordpress.org/plugins/linkify-authors/
 

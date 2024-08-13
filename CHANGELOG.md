@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Change: Tweak descriptions to clarify that the links are to each author's post archive
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
 * Change: Reduce number of 'Tags' from `readme.txt`

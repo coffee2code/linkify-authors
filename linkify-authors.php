@@ -8,7 +8,7 @@
  * Text Domain: linkify-authors
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to those authors. Includes widget and template tag.
+ * Description: Turn a string, list, or array of author IDs and/or slugs into a list of links to the post archive for each author. Includes widget and template tag.
  *
  * Compatible with WordPress 3.3 through 6.6+.
  *
