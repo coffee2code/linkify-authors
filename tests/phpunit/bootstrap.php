@@ -5,6 +5,9 @@
  * @package Linkify_Authors
  */
 
+// Prevent web access.
+( php_sapi_name() !== 'cli' ) && die();
+
 define( 'LINKIFY_AUTHORS_PLUGIN_DIR',  dirname( __FILE__, 3 ) );
 define( 'LINKIFY_AUTHORS_PLUGIN_FILE', LINKIFY_AUTHORS_PLUGIN_DIR . '/linkify-authors.php' );
 
