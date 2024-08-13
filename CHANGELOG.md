@@ -7,6 +7,7 @@
 * Change: Reduce number of 'Tags' from `readme.txt`
 * Change: Remove development and testing-related files from release packaging
 * Hardening: Unit tests: Prevent direct web access to `bootstrap.php`
+* New: Add some potential TODO items
 
 ## 2.3.1 _(2023-08-22)_
 * Fix: Fix some typos in documentation
