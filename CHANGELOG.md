@@ -1,8 +1,10 @@
 # Changelog
 
 ## _(in-progress)_
-* New: Extract base widget functionality common amongst my Linkify family of plugins into reusable base class
-* Change: Widget: Improve spacing in block editor around widget input field help text
+* Widget:
+    * New: Extract base widget functionality common amongst my Linkify family of plugins into reusable base class
+    * Change: Improve spacing in block editor around widget input field help text
+    * New: Add `get_config()` to retrieve configuration
 * New: Extract code for creating link to author's post archive into new `__c2c_linkify_authors_get_author_link()`
 * Hardening: Escape some variables prior to being output
 * Change: Tweak descriptions to clarify that the links are to each author's post archive

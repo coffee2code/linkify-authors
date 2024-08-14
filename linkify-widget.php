@@ -95,6 +95,17 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 		parent::__construct( $this->widget_id, $this->title, $widget_ops, $control_ops );
 	}
 
+	/**
+	 * Returns the config array.
+	 *
+	 * @since 005
+	 *
+	 * @return array
+	 */
+	public function get_config() {
+		return $this->config;
+	}
+
 	public function widget( $args, $instance ) {
 		extract( $args );
 
