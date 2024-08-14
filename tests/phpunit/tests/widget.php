@@ -110,10 +110,10 @@ class Linkify_Widget_Test extends WP_UnitTestCase {
 	}
 
 	public function test_widget_body_with_no_specified_authors() {
-		list( $widget, $config, $settings ) = $this->widget_init( array( 'authors' => '', 'before' => 'Author: ', 'after' => '.' )  );
+		list( $widget, $config, $settings ) = $this->widget_init( array( 'authors' => '', 'before' => '<ul><li>', 'after' => '</li></ul>', 'between' => '</li><li>' )  );
 
 		$this->assertEquals(
-			'<div class="my-widget"><h3>Authors</h3>No authors specified to be displayed.</div>',
+			'<div class="my-widget"><h3>Authors</h3><ul><li>No authors specified to be displayed</li></ul></div>',
 			$this->get_results( $widget, $settings, $config )
 		);
 	}
