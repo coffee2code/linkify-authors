@@ -75,7 +75,7 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 	}
 
 	public function test_widget_version() {
-		$this->assertEquals( '004', c2c_LinkifyAuthorsWidget::version() );
+		$this->assertEquals( '005', c2c_LinkifyAuthorsWidget::version() );
 	}
 
 	public function test_widget_hooks_widgets_init() {

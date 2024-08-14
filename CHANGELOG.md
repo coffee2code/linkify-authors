@@ -6,6 +6,7 @@
     * Change: Improve spacing in block editor around widget input field help text
     * New: Add `get_config()` to retrieve configuration
     * New: Add unit tests
+    * Change: Update version to 005
 * New: Extract code for creating link to author's post archive into new `__c2c_linkify_authors_get_author_link()`
 * Hardening: Escape some variables prior to being output
 * Change: Tweak descriptions to clarify that the links are to each author's post archive

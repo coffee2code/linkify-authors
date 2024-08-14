@@ -2,11 +2,11 @@
 /**
  * Linkify Authors plugin widget code
  *
- * Copyright (c) 2011-2020 by Scott Reilly (aka coffee2code)
+ * Copyright (c) 2011-2024 by Scott Reilly (aka coffee2code)
  *
  * @package Linkify_Authors_Widget
  * @author  Scott Reilly
- * @version 004
+ * @version 005
  */
 
 defined( 'ABSPATH' ) or die();
