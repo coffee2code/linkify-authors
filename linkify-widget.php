@@ -106,6 +106,12 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 		return $this->config;
 	}
 
+	/**
+	 * Outputs the body of the widget.
+	 *
+	 * @param array $args Widget args.
+	 * @param array $instance Widget instance.
+	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
 

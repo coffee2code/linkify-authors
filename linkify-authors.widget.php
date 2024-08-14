@@ -76,6 +76,14 @@ class c2c_LinkifyAuthorsWidget extends c2c_LinkifyWidget {
 		);
 	}
 
+	/**
+	 * Outputs the main content within the body of the widget.
+	 *
+	 * @since 005
+	 *
+	 * @param array $args Widget args.
+	 * @param array $instance Widget instance.
+	 */
 	public function widget_content( $args, $instance ) {
 		extract( $args );
 		c2c_linkify_authors( $authors, $before, $after, $between, $before_last, $none );
