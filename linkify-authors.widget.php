@@ -73,7 +73,7 @@ class c2c_LinkifyAuthorsWidget extends c2c_LinkifyWidget {
 			),
 			'none' =>  array(
 				'input'   => 'text',
-				'default' => '',
+				'default' => __( 'No authors specified to be displayed', 'linkify-authors' ),
 				'label'   => __( 'None text', 'linkify-authors' ),
 				'help'    => __( 'Text to appear when no authors have been found.  If blank, then the entire function doesn\'t display anything.', 'linkify-authors' ),
 			)

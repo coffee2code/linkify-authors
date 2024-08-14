@@ -109,5 +109,13 @@ class Linkify_Widget_Test extends WP_UnitTestCase {
 		);
 	}
 
+	public function test_widget_body_with_no_specified_authors() {
+		list( $widget, $config, $settings ) = $this->widget_init( array( 'authors' => '', 'before' => 'Author: ', 'after' => '.' )  );
+
+		$this->assertEquals(
+			'<div class="my-widget"><h3>Authors</h3>No authors specified to be displayed.</div>',
+			$this->get_results( $widget, $settings, $config )
+		);
+	}
 
 }
