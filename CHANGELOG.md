@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * New: Extract base widget functionality common amongst my Linkify family of plugins into reusable base class
+* Hardening: Escape some variables prior to being output
 * Change: Tweak descriptions to clarify that the links are to each author's post archive
 * Change: Add default values for optional arguments to inline parameter documentation
 * Change: Note compatibility through WP 6.6+
