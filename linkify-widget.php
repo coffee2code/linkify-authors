@@ -285,7 +285,7 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 			}
 			if ( $this->config[ $opt ]['help'] ) {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo "<br /><span style='color:#888; font-size:x-small;'>({$this->config[ $opt ]['help']})</span>";
+				echo "<div style='color:#888; font-size:x-small;'>({$this->config[ $opt ]['help']})</div>";
 			}
 			echo "</p>\n";
 		}
