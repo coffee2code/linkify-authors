@@ -18,6 +18,17 @@ if ( class_exists( 'WP_Widget' ) && ! class_exists( 'c2c_LinkifyAuthorsWidget' )
 class c2c_LinkifyAuthorsWidget extends c2c_LinkifyWidget {
 
 	/**
+	 * Returns version of the widget.
+	 *
+	 * @since 004
+	 *
+	 * @return string
+	 */
+	public static function version() {
+		return '005';
+	}
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
