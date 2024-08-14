@@ -109,6 +109,19 @@ class Linkify_Widget_Test extends WP_UnitTestCase {
 		);
 	}
 
+	public function test_widget_body_with_multiple_authors() {
+		list( $widget, $config, $settings ) = $this->widget_init( array( 'authors' => $this->user_ids[0] . ',' . $this->user_ids[1], 'before' => '<ul><li>', 'after' => '</li></ul>', 'between' => '</li><li>' )  );
+
+		$this->assertEquals(
+			sprintf(
+				'<div class="my-widget"><h3>Authors</h3><ul><li>%s</li><li>%s</li></ul></div>',
+				__c2c_linkify_authors_get_author_link( $this->user_ids[0] ),
+				__c2c_linkify_authors_get_author_link( $this->user_ids[1] )
+			),
+			$this->get_results( $widget, $settings, $config )
+		);
+	}
+
 	public function test_widget_body_with_no_specified_authors() {
 		list( $widget, $config, $settings ) = $this->widget_init( array( 'authors' => '', 'before' => '<ul><li>', 'after' => '</li></ul>', 'between' => '</li><li>' )  );
 
