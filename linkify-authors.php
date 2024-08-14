@@ -51,11 +51,11 @@ if ( ! function_exists( 'c2c_linkify_authors' ) ) :
  *
  * @param int|string|array $authors     A single author ID/slug, or multiple author IDs/slugs defined via an array, or multiple author IDs/slugs defined
  *                                      via a comma-separated and/or space-separated string
- * @param string           $before      Optional. Text to appear before the entire author listing (if authors exist or if 'none' setting is specified).
- * @param string           $after       Optional. Text to appear after the entire author listing (if authors exist or if 'none' setting is specified).
- * @param string           $between     Optional. Text to appear between all authors.
- * @param string           $before_last Optional. Text to appear between the second-to-last and last element, if not specified, 'between' value is used.
- * @param string           $none        Optional. Text to appear when no authors have been found.  If blank, then the entire function doesn't display anything.
+ * @param string           $before      Optional. Text to appear before the entire author listing (if authors exist or if 'none' setting is specified). Default empty string.
+ * @param string           $after       Optional. Text to appear after the entire author listing (if authors exist or if 'none' setting is specified). Default empty string.
+ * @param string           $between     Optional. Text to appear between all authors. Default ', '.
+ * @param string           $before_last Optional. Text to appear between the second-to-last and last element, if not specified, 'between' value is used. Default empty string.
+ * @param string           $none        Optional. Text to appear when no authors have been found.  If blank, then the entire function doesn't display anything. Default empty string.
  */
 function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
 	if ( empty( $authors ) ) {

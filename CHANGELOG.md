@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * Change: Tweak descriptions to clarify that the links are to each author's post archive
+* Change: Add default values for optional arguments to inline parameter documentation
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
 * Change: Reduce number of 'Tags' from `readme.txt`
