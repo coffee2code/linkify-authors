@@ -176,4 +176,33 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 		$this->assertEquals( $expected, $this->get_results( array( array(), '<ul><li>', '</li></ul>', '</li><li>', '', $missing ), false ) );
 	}
 
+	/*
+	 * __c2c_linkify_authors_get_author_link()
+	 */
+
+	public function test___c2c_linkify_authors_get_author_link() {
+		$title = get_the_author_meta( 'display_name', $this->user_ids[0] );
+		$expected = sprintf(
+			'<a href="http://example.org/?author=%d" title="Posts by %s">%s</a>',
+			esc_attr( $this->user_ids[0] ),
+			esc_attr( $title ),
+			esc_html( $title )
+		);
+
+		$this->assertEquals(
+			$expected,
+			__c2c_linkify_authors_get_author_link( $this->user_ids[0] )
+		);
+	}
+
+	public function test___c2c_linkify_authors_get_author_lin_with_invalid_id() {
+		$this->assertEmpty( __c2c_linkify_authors_get_author_link( -1 ) );
+	}
+
+	public function test___c2c_linkify_authors_get_author_link_for_user_with_no_display_name() {
+		add_filter( 'get_the_author_display_name', '__return_empty_string' );
+
+		$this->assertEquals( '', __c2c_linkify_authors_get_author_link( $this->user_ids[0] ) );
+	}
+
 }

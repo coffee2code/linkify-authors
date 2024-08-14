@@ -84,16 +84,10 @@ function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ',
 			if ( ! $id ) {
 				continue;
 			}
-			$title = get_the_author_meta( 'display_name', $id );
 
-			if ( $title ) {
-				$links[] = sprintf(
-					'<a href="%1$s" title="%2$s">%3$s</a>',
-					esc_url( get_author_posts_url( $id ) ),
-					/* translators: %s: Author's display name */
-					esc_attr( sprintf( __( 'Posts by %s', 'linkify-authors' ), $title ) ),
-					esc_attr( $title )
-				);
+			$link = __c2c_linkify_authors_get_author_link( $id );
+			if ( $link ) {
+				$links[] = $link;
 			}
 		}
 		if ( empty( $before_last ) ) {
@@ -124,3 +118,27 @@ function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ',
 }
 add_action( 'c2c_linkify_authors', 'c2c_linkify_authors', 10, 6 );
 endif;
+
+/**
+ * Returns the post author archive link for a user.
+ *
+ * @access private
+ *
+ * @param int $user_id The user ID.
+ * @return string
+ */
+function __c2c_linkify_authors_get_author_link( $user_id ) {
+	$title = get_the_author_meta( 'display_name', $user_id );
+
+	if ( ! $title ) {
+		return '';
+	}
+
+	return sprintf(
+		'<a href="%1$s" title="%2$s">%3$s</a>',
+		esc_url( get_author_posts_url( $user_id ) ),
+		/* translators: %s: Author's display name */
+		esc_attr( sprintf( __( 'Posts by %s', 'linkify-authors' ), $title ) ),
+		esc_attr( $title )
+	);
+}
