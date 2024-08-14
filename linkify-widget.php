@@ -103,9 +103,11 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 			$$key = apply_filters( $this->widget_id . '_widget_' . $key, $instance[ $key ] );
 		}
 
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo $before_widget;
 
 		if ( $title ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo $before_title . $title . $after_title;
 		}
 
@@ -113,6 +115,7 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 		$args = compact( array_keys( $this->config ) );
 		$this->widget_content( $args, $instance );
 
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo $after_widget;
 	}
 
@@ -123,6 +126,28 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 		}
 
 		return $instance;
+	}
+
+	/**
+	 * Returns escaped attributes string for an HTML tag.
+	 *
+	 * @since 005
+	 *
+	 * @param string[] $attributes Associative array of attribute names and values.
+	 * @return string
+	 */
+	public function esc_attributes( $attributes ) {
+		$string = '';
+
+		foreach ( $attributes as $key => $value ) {
+			$string .= sprintf(
+				'%s="%s" ',
+				esc_attr( wp_strip_all_tags( $key ) ),
+				esc_html( wp_strip_all_tags( $value ) )
+			);
+		}
+
+		return trim( $string );
 	}
 
 	public function form( $instance ) {
@@ -199,7 +224,9 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 					"<textarea name='%s' id='%s' class='widefat' %s>%s</textarea>",
 					esc_attr( $input_name ),
 					esc_attr( $input_id ),
-					$this->config[ $opt ]['input_attributes'],
+					// PHPCS: The keys and values of all attributes are being escaped by esc_attributes(), so this is safe.
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$this->esc_attributes( $this->config[ $opt ]['input_attributes'] ),
 					esc_html( $value )
 				);
 			} elseif ( 'select' == $input ) {
@@ -250,11 +277,14 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 					esc_attr( $value ),
 					esc_attr( $tclass ),
 					esc_attr( $tstyle ),
-					$checked,
-					$this->config[ $opt ]['input_attributes']
+					( 'checkbox' === $input ? checked( $value, 1, false ) : '' ),
+					// PHPCS: The keys and values of all attributes are being escaped by esc_attributes(), so this is safe.
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$this->esc_attributes( $this->config[ $opt ]['input_attributes'] )
 				);
 			}
 			if ( $this->config[ $opt ]['help'] ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo "<br /><span style='color:#888; font-size:x-small;'>({$this->config[ $opt ]['help']})</span>";
 			}
 			echo "</p>\n";
