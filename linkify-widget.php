@@ -145,8 +145,8 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 			if ( 'none' == $input ) {
 				if ( 'more' == $opt ) {
 					$i++; $j++;
-					echo "<p>$label</p>";
-					echo "<div class='widget-group widget-group-$i'>";
+					echo '<p>' . esc_html( $label ) . '</p>';
+					printf ( '<div class="widget-group widget-group-%d">', intval( $i ) );
 				} elseif ( 'endmore' == $opt ) {
 					$j--;
 					echo '</div>';
@@ -190,7 +190,7 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 				printf(
 					"<label for='%s'>%s:</label> ",
 					esc_attr( $input_id ),
-					$label
+					esc_html( $label )
 				);
 			}
 
@@ -200,7 +200,7 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 					esc_attr( $input_name ),
 					esc_attr( $input_id ),
 					$this->config[ $opt ]['input_attributes'],
-					$value
+					esc_html( $value )
 				);
 			} elseif ( 'select' == $input ) {
 				printf(
@@ -213,14 +213,14 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 						"<option value='%s'%s>%s</option>",
 						esc_attr( $sopt ),
 						selected( $sopt, $value, false ),
-						$sopt
+						esc_html( $sopt )
 					);
 				}
 				echo "</select>";
 			} elseif ( 'multiselect' == $input ) {
 				echo '<fieldset style="border:1px solid #ccc; padding:2px 8px;">';
 				if ( $label ) {
-					echo "<legend>$label: </legend>";
+					echo '<legend>' . esc_html( $label ) . ': </legend>';
 				}
 				foreach ( (array) $this->config[ $opt ]['options'] as $sopt ) {
 					printf(
@@ -229,7 +229,7 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 						esc_attr( $input_id ),
 						esc_attr( $sopt ),
 						checked( in_array( $sopt, $value ), true, false ),
-						$sopt
+						esc_html( $sopt )
 					);
 				}
 				echo '</fieldset>';
