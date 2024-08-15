@@ -21,7 +21,6 @@ The following list comprises ideas, suggestions, and known issues, all of which 
 * Support conditional before and after? (if main content is empty, don't output before/after strings; could just be 'before_none' and 'after_none', but only after argument array support is added)
 * List all authors by default if none are specified?
   * Maybe only if explicitly indicated via an 'all' keyword?
-* Remove 'br' from before widget help text
 * Widget: Indicate that 'authors' is required
   * Ideally, the widget UI should warn until an author is specified and enforce requirement
 * Disable support of HTML by default and require its support to be enabled? (though I consider it necessary for most people's use cases)
