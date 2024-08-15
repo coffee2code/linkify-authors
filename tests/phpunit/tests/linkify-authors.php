@@ -195,7 +195,7 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 		);
 	}
 
-	public function test___c2c_linkify_authors_get_author_lin_with_invalid_id() {
+	public function test___c2c_linkify_authors_get_author_link_with_invalid_id() {
 		$this->assertEmpty( __c2c_linkify_authors_get_author_link( -1 ) );
 	}
 
