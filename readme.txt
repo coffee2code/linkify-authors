@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 6.6
-Stable tag: 2.3.1
+Stable tag: 2.4
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to the post archive for each author. Provides a widget and template tag.
 
@@ -65,6 +65,32 @@ This is the hook provided by the plugin:
 
 == Changelog ==
 
+= 2.4 (2024-08-15) =
+Highlights:
+
+This recommended release features improvements to widget implementation, adds some hardening measures, notes compatibility through WP 6.6+, removes unit tests from release packaging, updates copyright date (2024), and other code improvements and minor changes.
+
+Details:
+
+* Widget:
+    * New: Extract base widget functionality common amongst my Linkify family of plugins into reusable base class
+    * Change: Define a default 'none' message so that something is shown when no authors are specified
+    * Change: Improve spacing in block editor around widget input field help text
+    * New: Add `get_config()` to retrieve configuration
+    * New: Add unit tests
+    * Change: Update version to 005
+* New: Extract code for creating link to author's post archive into new `__c2c_linkify_authors_get_author_link()`
+* Hardening: Escape some variables prior to being output
+* Change: Tweak descriptions to clarify that the links are to each author's post archive
+* Change: Add default values for optional arguments to inline parameter documentation
+* Change: Note compatibility through WP 6.6+
+* Change: Prevent unwarranted PHPCS complaints about unescaped output (HTML is allowed)
+* Change: Update copyright date (2024)
+* Change: Reduce number of 'Tags' from `readme.txt`
+* Change: Remove development and testing-related files from release packaging
+* Hardening: Unit tests: Prevent direct web access to `bootstrap.php`
+* New: Add some potential TODO items
+
 = 2.3.1 (2023-08-22) =
 * Fix: Fix some typos in documentation
 * Change: Note compatibility through WP 6.3+
@@ -95,18 +121,13 @@ Details:
     * Change: In bootstrap, store path to plugin file constant
     * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
 
-= 2.2.6 (2021-04-26) =
-* Change: Add textdomain for lone non-widget string
-* Change: Note compatibility through WP 5.7+
-* Change: Update copyright date (2021)
-* Change: Fix formatting for readme.txt changelog entry for v2.2.5
-* Change: Unit tests: Move install script into `phpunit/bin/` where it was originally meant to be
-* New: Add a few more possible TODO items
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/linkify-authors/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.4 =
+Recommended update: improved widget implementation, added some hardening measures, noted compatibility through WP 6.6+, removed unit tests from release packaging, updated copyright date (2024), and other code improvements and minor changes.
 
 = 2.3.1 =
 Trivial update: noted compatibility through WP 6.3+, updated unit tests to run against latest WordPress, fixed some typos in inline documentation, and updated copyright date (2023)

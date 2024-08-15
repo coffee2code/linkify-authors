@@ -1,6 +1,13 @@
 # Changelog
 
-## _(in-progress)_
+## 2.4 _(2024-08-15)_
+
+### Highlights:
+
+This recommended release features improvements to widget implementation, adds some hardening measures, notes compatibility through WP 6.6+, removes unit tests from release packaging, updates copyright date (2024), and other code improvements and minor changes.
+
+### Details:
+
 * Widget:
     * New: Extract base widget functionality common amongst my Linkify family of plugins into reusable base class
     * Change: Define a default 'none' message so that something is shown when no authors are specified
