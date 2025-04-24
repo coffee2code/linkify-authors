@@ -2,7 +2,7 @@
 /**
  * Linkify plugin widget code
  *
- * Copyright (c) 2011-2024 by Scott Reilly (aka coffee2code)
+ * Copyright (c) 2011-2025 by Scott Reilly (aka coffee2code)
  *
  * @package Linkify_Widget
  * @author  Scott Reilly
