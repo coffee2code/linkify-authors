@@ -4,6 +4,8 @@
 * Change: Note compatibility through WP 6.8+
 * Change: Note compatibility through PHP 8.3+
 * Change: Update copyright date (2025)
+* Unit tests:
+    * Change: Explicitly define return type for overridden methods
 
 ## 2.4 _(2024-08-15)_
 

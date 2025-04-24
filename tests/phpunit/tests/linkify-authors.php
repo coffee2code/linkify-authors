@@ -6,7 +6,7 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 
 	private $user_ids = array();
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->user_ids = $this->factory->user->create_many( 5 );
 	}
