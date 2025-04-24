@@ -5,7 +5,7 @@ Tags: author, link, linkify, archives, widget
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
-Tested up to: 6.6
+Tested up to: 6.8
 Stable tag: 2.4
 
 Turn a string, list, or array of author IDs and/or slugs into a list of links to the post archive for each author. Provides a widget and template tag.
