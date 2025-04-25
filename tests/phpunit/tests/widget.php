@@ -140,4 +140,29 @@ class Linkify_Widget_Test extends WP_UnitTestCase {
 		);
 	}
 
+	public function test_output_omits_unsafe_markup() {
+		list( $widget, $config, $settings ) = $this->widget_init( array(
+			'authors' => array_slice( $this->user_ids, 0, 2 ),
+			'before'  => '<ul><li><script>alert("boom!");</script>',
+			'after'   => '<script>alert("boom!");</script></li></ul>',
+			'between' => '</li><li><script>alert("boom!");<strong><span class="test">Hi</span></strong></script></li><li>'
+		) );
+
+		$settings = array(
+			'before_title'  => '<h3><script>alert("boom!");</script>',
+			'before_widget' => '<div class="my-widget"><script>alert("boom!");</script>',
+			'after_title'   => '<script>alert("boom!");</script></h3>',
+			'after_widget'  => '<script>alert("boom!");</script></div>'
+		);
+
+		$this->assertEquals(
+			sprintf(
+				'<div class="my-widget">alert("boom!");<h3>alert("boom!");Authorsalert("boom!");</h3><ul><li>alert("boom!");%s</li><li>alert("boom!");<strong><span class="test">Hi</span></strong></li><li>%salert("boom!");</li></ul>alert("boom!");</div>',
+				__c2c_linkify_authors_get_author_link( $this->user_ids[0] ),
+				__c2c_linkify_authors_get_author_link( $this->user_ids[1] )
+			),
+			$this->get_results( $widget, $settings, $config )
+		);
+	}
+
 }

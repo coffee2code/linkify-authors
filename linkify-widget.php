@@ -120,20 +120,17 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 			$$key = apply_filters( $this->widget_id . '_widget_' . $key, $instance[ $key ] );
 		}
 
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo $before_widget;
+		echo wp_kses_post( $before_widget );
 
 		if ( $title ) {
-			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo $before_title . $title . $after_title;
+			echo wp_kses_post( $before_title . $title . $after_title );
 		}
 
 		// Widget content
 		$args = compact( array_keys( $this->config ) );
 		$this->widget_content( $args, $instance );
 
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo $after_widget;
+		echo wp_kses_post( $after_widget );
 	}
 
 	public function update( $new_instance, $old_instance ) {
@@ -295,14 +292,14 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 					esc_attr( $tclass ),
 					esc_attr( $tstyle ),
 					( 'checkbox' === $input ? checked( $value, 1, false ) : '' ),
-					// PHPCS: The keys and values of all attributes are being escaped by esc_attributes(), so this is safe.
-					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- The keys and values of all attributes are being escaped by esc_attributes(), so this is safe.
 					$this->esc_attributes( $this->config[ $opt ]['input_attributes'] )
 				);
 			}
 			if ( $this->config[ $opt ]['help'] ) {
-				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo "<div style='color:#888; font-size:x-small;'>({$this->config[ $opt ]['help']})</div>";
+				echo '<div style="color:#888; font-size:x-small;">(';
+				echo wp_kses_post( $this->config[ $opt ]['help'] );
+				echo ')</div>';
 			}
 			echo "</p>\n";
 		}
