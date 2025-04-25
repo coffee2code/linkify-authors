@@ -238,8 +238,7 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 					"<textarea name='%s' id='%s' class='widefat' %s>%s</textarea>",
 					esc_attr( $input_name ),
 					esc_attr( $input_id ),
-					// PHPCS: The keys and values of all attributes are being escaped by esc_attributes(), so this is safe.
-					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- The keys and values of all attributes are being escaped by esc_attributes(), so this is safe.
 					$this->esc_attributes( $this->config[ $opt ]['input_attributes'] ),
 					esc_html( $value )
 				);
