@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 2.5 _(2025-04-24)_
 * Hardening: Prevent unsafe markup from being output
 * Update widget base class to v006:
     * Hardening: Prevent unsafe markup from being output
