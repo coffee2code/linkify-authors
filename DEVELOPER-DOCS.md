@@ -13,6 +13,8 @@ Displays links to each of any number of authors specified via author IDs/slugs
 
 ### Arguments
 
+_Note: Unsafe markup (such as `script`) will be omitted from any string being output._
+
 * `$authors` _(string|int|array)_
 A single author ID/slug, or multiple author IDs/slugs defined via an array, or multiple author IDs/slugs defined via a comma-separated and/or space-separated string
 
