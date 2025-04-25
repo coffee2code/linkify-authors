@@ -67,15 +67,15 @@ class Linkify_Widget_Test extends WP_UnitTestCase {
 	}
 
 	public function test_widget_version() {
-		$this->assertEquals( '005', c2c_LinkifyAuthorsWidget::version() );
+		$this->assertEquals( '006', c2c_LinkifyAuthorsWidget::version() );
 	}
 
 	public function test_widget_framework_class_name() {
-		$this->assertTrue( class_exists( 'c2c_LinkifyWidget' ) );
+		$this->assertTrue( class_exists( 'c2c_LinkifyWidget_006' ) );
 	}
 
 	public function test_widget_framework_version() {
-		$this->assertEquals( '005', c2c_LinkifyWidget::version() );
+		$this->assertEquals( '006', c2c_LinkifyWidget_006::version() );
 	}
 
 	public function test_widget_hooks_widgets_init() {

@@ -4,6 +4,7 @@
 * Hardening: Prevent unsafe markup from being output
 * Update widget base class to v006:
     * Hardening: Prevent unsafe markup from being output
+    * Change: Include version number in class name to prevent using older version
     * Change: Move PHPCS-related inline comment with the associated `phpcs:ignore` comment
 * Change: Note compatibility through WP 6.8+
 * Change: Note compatibility through PHP 8.3+

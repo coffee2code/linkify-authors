@@ -6,14 +6,14 @@
  *
  * @package Linkify_Widget
  * @author  Scott Reilly
- * @version 005
+ * @version 006
  */
 
 defined( 'ABSPATH' ) or die();
 
-if ( class_exists( 'WP_Widget' ) && ! class_exists( 'c2c_LinkifyWidget' ) ) :
+if ( class_exists( 'WP_Widget' ) && ! class_exists( 'c2c_LinkifyWidget_006' ) ) :
 
-abstract class c2c_LinkifyWidget extends WP_Widget {
+abstract class c2c_LinkifyWidget_006 extends WP_Widget {
 
 	abstract function widget_content( $args, $instance );
 
@@ -72,7 +72,7 @@ abstract class c2c_LinkifyWidget extends WP_Widget {
 	 * @since 004
 	 */
 	public static function version() {
-		return '005';
+		return '006';
 	}
 
 	/**
