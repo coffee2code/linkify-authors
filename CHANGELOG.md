@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Hardening: Prevent unsafe markup from being output
 * Change: Note compatibility through WP 6.8+
 * Change: Note compatibility through PHP 8.3+
 * Change: Update copyright date (2025)

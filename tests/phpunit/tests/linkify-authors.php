@@ -36,7 +36,7 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 		$str = '';
 		for ( $n = 1; $n <= $count; $n++, $user_index++ ) {
 			if ( ! empty( $str ) ) {
-				$str .= $between;
+				$str .= wp_kses_post( $between );
 			}
 			$user = get_userdata( $this->user_ids[ $user_index ] );
 			$str .= '<a href="http://example.org/?author=' . $user->ID . '" title="Posts by ' . $user->display_name . '">' . $user->display_name . '</a>';
@@ -162,6 +162,28 @@ class Linkify_Authors_Test extends WP_UnitTestCase {
 		$missing = 'No authors to list.';
 		$expected = '<ul><li>' . $missing . '</li></ul>';
 		$this->assertEquals( $expected, $this->get_results( array( array(), '<ul><li>', '</li></ul>', '</li><li>', '', $missing ) ) );
+	}
+
+	public function test_unsafe_markup_is_omitted_no_authors() {
+		$missing = 'No authors to list.';
+		$expected = '<ul><li>alert("boom!");' . $missing . 'alert("boom!");</li></ul>';
+		$this->assertEquals( $expected, $this->get_results( array( array(), '<ul><li><script>alert("boom!");</script>', '<script>alert("boom!");</script></li></ul>', '</li><li>', '', $missing ) ) );
+	}
+
+	public function test_unsafe_markup_is_omitted() {
+		$before_last = ', and ';
+		$boom = 'alert("boom!");';
+		$expected = $boom . $this->expected_output( 1, 0 ) . $before_last . $boom . $this->expected_output( 1, 1, "," ) . $boom;
+		$this->assertEquals(
+			$expected,
+			$this->get_results( array(
+				array_slice( $this->user_ids, 0, 2 ),
+				"<script>$boom</script>",
+				"<script>$boom</script>",
+				"<script>$boom</script>",
+				$before_last . "<script>$boom</script>"
+			) )
+		);
 	}
 
 	/*

@@ -112,9 +112,8 @@ function c2c_linkify_authors( $authors, $before = '', $after = '', $between = ',
 		}
 		$response = $none;
 	}
-	// Output authors (which is permitted to include markup).
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo $before . $response . $after;
+	// Output authors.
+	echo wp_kses_post( $before . $response . $after );
 }
 add_action( 'c2c_linkify_authors', 'c2c_linkify_authors', 10, 6 );
 endif;
